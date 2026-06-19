@@ -21,5 +21,21 @@ public class BookMyStayMain {
         search.searchAvailableRooms(
                 inventory.getRoomInventory(),
                 inventory.getRoomPrices());
+
+        //usecase3
+        BookingQueueService queue =
+                new BookingQueueService();
+
+        queue.addBookingRequest(
+                new Reservation("R101",
+                        "Deepika",
+                        "Single"));
+
+        queue.addBookingRequest(
+                new Reservation("R102",
+                        "Priya",
+                        "Double"));
+
+        queue.processBookings();
     }
 }
