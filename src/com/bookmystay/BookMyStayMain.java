@@ -75,5 +75,19 @@ public class BookMyStayMain {
                 "Additional Cost : ₹"
                         + serviceManager
                         .calculateTotalCost("R101"));
+
+        //usecase6
+        BookingHistoryService historyService =
+                new BookingHistoryService();
+
+        historyService.addReservation(r1);
+        historyService.addReservation(r2);
+
+        historyService.displayBookingHistory();
+
+        System.out.println(
+                "\nTotal Bookings : "
+                        + historyService
+                        .getTotalBookings());
     }
 }
