@@ -56,5 +56,24 @@ public class BookMyStayMain {
         allocationService.allocateRoom(r2, "D201");
 
         allocationService.displayAllocatedRooms();
+
+        //usecase5
+        AddOnServiceManager serviceManager =
+                new AddOnServiceManager();
+
+        serviceManager.addService(
+                "R101",
+                new Service("Breakfast", 500));
+
+        serviceManager.addService(
+                "R101",
+                new Service("Airport Pickup", 1000));
+
+        serviceManager.displayServices("R101");
+
+        System.out.println(
+                "Additional Cost : ₹"
+                        + serviceManager
+                        .calculateTotalCost("R101"));
     }
 }
