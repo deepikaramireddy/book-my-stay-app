@@ -37,5 +37,24 @@ public class BookMyStayMain {
                         "Double"));
 
         queue.processBookings();
+
+        //usecase4
+        RoomAllocationService allocationService =
+                new RoomAllocationService();
+
+        Reservation r1 =
+                new Reservation("R101",
+                        "Deepika",
+                        "Single");
+
+        Reservation r2 =
+                new Reservation("R102",
+                        "Priya",
+                        "Double");
+
+        allocationService.allocateRoom(r1, "S101");
+        allocationService.allocateRoom(r2, "D201");
+
+        allocationService.displayAllocatedRooms();
     }
 }
